@@ -105,73 +105,53 @@ body{
     color:white;
 }
 
-/* PAYMENT POPUP - CENTER ALIGNED */
+/* PAYMENT POPUP - PERFECT CENTERED */
 .payment-box{
     position:fixed;
     top:0;
     left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.8);
-    display:none; /* 
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.85);
+    display:none; /* JS याला flex मध्ये बदलेल */
     justify-content:center;
     align-items:center;
-    z-index: 9999;
+    z-index: 99999;
 }
 
 .payment-content{
     width:90%;
-    max-width:350px;
+    max-width:360px;
     background:#111827;
-    padding:25px;
-    border-radius:20px;
+    padding:30px;
+    border-radius:24px;
     text-align:center;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid yellow;
+    /* बदल: संपूर्ण पॉपअप बॉक्सला पिवळी बॉर्डर आणि ग्लो (Yellow Highlight) */
+    border: 3px solid #facc15;
+    box-shadow: 0 0 25px rgba(250, 204, 21, 0.4);
 }
 
 .payment-content h2 {
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 24px;
 }
 
-#feeText{
-    color:yellow;
-    background:#222;
-    padding:12px;
-    border-radius:10px;
-    margin-top:15px;
-    font-size:24px;
-    font-weight:bold;
-    box-shadow:0 0 10px yellow;
-    width: 100%;
-}
-
-.payment-content button {
-    width:100%;
-    padding:12px;
-    margin-top:15px;
-    background:lime;
-    border:none;
-    border-radius:10px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* QR */
+/* QR SCANNER CONTAINER */
 .scanner-container{
     position:relative;
     width:220px;
     height:220px;
-    margin:10px auto;
+    margin:0 auto 20px auto;
     overflow:hidden;
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 5px;
+    display: block;
 }
 
 .qr-image{
@@ -192,6 +172,33 @@ body{
     100%{ top:100%; }
 }
 
+/* FEE TEXT BELOW SCANNER */
+#feeText{
+    color:#facc15; /* पिवळा रंग */
+    background:#1f2937;
+    padding:14px;
+    border-radius:12px;
+    margin-top:5px;
+    font-size:22px;
+    font-weight:bold;
+    border: 1px solid #facc15;
+    width: 100%;
+    text-align: center;
+}
+
+.payment-content button {
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    background:lime;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    color: black;
+}
+
 /* NOTIFICATION */
 .notification{
     position:fixed;
@@ -203,7 +210,7 @@ body{
     border-radius:12px;
     display:none;
     font-weight:bold;
-    z-index: 9999;
+    z-index: 99999;
 }
 
 /* MOBILE RESPONSIVE */
