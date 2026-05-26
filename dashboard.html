@@ -38,11 +38,14 @@
 <div id="paymentBox" class="payment-box">
     <div class="payment-content">
         <h2>Scan To Pay</h2>
+        
         <div class="scanner-container">
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=ParkingPayment" class="qr-image">
             <div class="scanner-line"></div>
         </div>
+        
         <h3 id="feeText"></h3>
+        
         <button onclick="completePayment()">Payment Done</button>
     </div>
 </div>
@@ -78,6 +81,7 @@ function bookSlot(slot){
         $(currentSlot).attr("data-fee", fee);
         $(currentSlot).attr("data-time", finalTime);
         
+        // CSS display 'flex' केल्यामुळे पॉपअप उभ्या आणि आडव्या दोन्ही बाजूने सेंटरला येईल
         $("#paymentBox").css("display", "flex").hide().fadeIn();
     }
 }
@@ -111,7 +115,6 @@ function completePayment(){
         }, 5000);
     }, 5000);
 }
-
 
 function unbookSlot(slot){
     let slotNumber = $(slot).attr("data-slot");
